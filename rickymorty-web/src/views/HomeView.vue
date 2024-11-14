@@ -1,51 +1,51 @@
-<!-- HomeView.vue -->
 <template>
-  <div class="home-view">
-    <h1>Welcome to the Episode List</h1>
-    <div class="episode-list">
-      <EpisodeCard
-        v-for="episode in episodes"
-        :key="episode.id"
-        :episode="episode"
-      />
-    </div>
+  <div class="home">
+    <h1>
+      Bienvenido a la página de Rick & Morty creada por Eider Fernández Crespo
+    </h1>
+    <router-link to="/episodes" class="link">Ver Episodios</router-link>
   </div>
 </template>
 
 <script>
-import EpisodeCard from "../components/EpisodeCard.vue"; // Importar el componente
-
 export default {
-  components: {
-    EpisodeCard, // Registrar el componente
-  },
-  data() {
-    return {
-      episodes: [
-        {
-          id: 1,
-          name: "Pilot",
-          air_date: "December 2, 2013",
-          episode: "S01E01",
-        },
-        // Aquí puedes añadir más episodios de ejemplo si es necesario
-      ],
-    };
-  },
+  name: "HomeView",
 };
 </script>
 
 <style scoped>
-.home-view {
+.home {
   text-align: center;
-  background-color: #1e272e;
+  background-color: #f5f5dc;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  color: #333;
   padding: 20px;
-  min-height: 100vh;
 }
 
-.episode-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #2c3e50;
+  width: 35%;
+}
+
+.link {
+  font-size: 18px;
+  color: #42b983;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: #333;
+  color: white;
+}
+
+.link:hover {
+  background-color: #42b983;
+  color: white;
 }
 </style>

@@ -1,17 +1,23 @@
 import { createRouter, createWebHistory } from "vue-router";
-import EpisodeList from "../views/EpisodeList.vue"; // Importa tu componente
+import EpisodeList from "../pages/EpisodeList.vue";
+import CharacterDetail from "../pages/CharacterDetail.vue";
 
 const routes = [
   {
     path: "/",
-    name: "EpisodeList",
-    component: EpisodeList, // Cambia aquí para usar EpisodeList
+    name: "HomeView",
+    component: () => import("../views/HomeView.vue"),
   },
   {
-    path: "/about",
-    name: "about",
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../views/AboutView.vue"),
+    path: "/episodes",
+    name: "EpisodeList",
+    component: EpisodeList,
+  },
+  {
+    path: "/character/:id",
+    name: "CharacterDetail",
+    component: CharacterDetail,
+    props: true,
   },
 ];
 

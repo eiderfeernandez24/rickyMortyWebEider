@@ -1,9 +1,7 @@
 <template>
-  <nav>
-    <router-link to="/" class="nav-link">Home</router-link> |
-    <router-link to="/about" class="nav-link">About</router-link>
-  </nav>
-  <router-view />
+  <div id="app">
+    <router-view />
+  </div>
 </template>
 
 <style scoped>
@@ -30,9 +28,5 @@ nav {
 .nav-link:hover {
   background-color: #42b983;
   color: white;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
 }
 </style>
